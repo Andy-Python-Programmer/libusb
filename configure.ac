@@ -128,6 +128,11 @@ Please use an explicit --host=$host_cpu-emscripten instead.
 	backend=netbsd
 	platform=posix
 	;;
+*-redox*)
+	AC_MSG_RESULT([Redox])
+	backend=redox
+	platform=posix
+	;;
 *-openbsd*)
 	AC_MSG_RESULT([OpenBSD])
 	backend=openbsd
@@ -456,6 +461,7 @@ AM_CONDITIONAL([BUILD_UMOCKDEV_TEST], [test "x$ac_have_umockdev" = xyes -a "x$lo
 AM_CONDITIONAL([CREATE_IMPORT_LIB], [test "x$create_import_lib" = xyes])
 AM_CONDITIONAL([OS_DARWIN], [test "x$backend" = xdarwin])
 AM_CONDITIONAL([OS_HAIKU], [test "x$backend" = xhaiku])
+AM_CONDITIONAL([OS_REDOX], [test "x$backend" = xredox])
 AM_CONDITIONAL([OS_LINUX], [test "x$backend" = xlinux])
 AM_CONDITIONAL([OS_NETBSD], [test "x$backend" = xnetbsd])
 AM_CONDITIONAL([OS_NULL], [test "x$backend" = xnull])

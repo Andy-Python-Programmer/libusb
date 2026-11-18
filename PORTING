@@ -65,7 +65,7 @@ Getting started
 stuff for an example).
 
 2. Implement your backend in the libusb/os/ directory, modifying
-libusb/os/Makefile.am appropriately.
+libusb/Makefile.am appropriately.
 
 3. Add preprocessor logic to the top of libusb/core.c to statically assign the
 right usbi_backend for your platform.

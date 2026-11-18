@@ -26,6 +26,7 @@ OS_HAIKU_SRC = os/haiku_usb.h os/haiku_usb_backend.cpp \
 	       os/haiku_pollfs.cpp os/haiku_usb_raw.h os/haiku_usb_raw.cpp
 OS_LINUX_SRC = os/linux_usbfs.h os/linux_usbfs.c
 OS_EMSCRIPTEN_SRC = os/emscripten_webusb.cpp
+OS_REDOX_SRC = os/redox_usb.c
 OS_NETBSD_SRC = os/netbsd_usb.c
 OS_NULL_SRC = os/null_usb.c
 OS_OPENBSD_SRC = os/openbsd_usb.c
@@ -73,6 +74,10 @@ endif
 
 if OS_NULL
 OS_SRC = $(OS_NULL_SRC)
+endif
+
+if OS_REDOX
+OS_SRC = $(OS_REDOX_SRC)
 endif
 
 if OS_OPENBSD
